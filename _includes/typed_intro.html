@@ -1,0 +1,31 @@
+<span id="typed-text"></span>
+
+<script>
+  const typed_strings = [
+    "web design",
+    "dataviz",
+    "react",
+    "react-native",
+    "python",
+    "pandas",
+    "scrum",
+    "open source",
+    "welcome!",
+  ];
+
+  document.addEventListener("DOMContentLoaded", initTyped);
+
+  function initTyped() {
+    if (document.querySelector('#typed-text')?.getAttribute('data-typed-initialized')) return;
+
+    new Typed('#typed-text', {
+      strings: typed_strings,
+      typeSpeed: 60,
+      backSpeed: 30,
+      loop: false,
+      showCursor: false,
+  });
+
+    document.querySelector('#typed-text').setAttribute('data-typed-initialized', 'true');
+  }
+</script>

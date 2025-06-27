@@ -1,0 +1,225 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #fb6233;
+}
+
+
+.site-global {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+}
+
+.site-content {
+    flex: 1;
+    padding-top: 3rem;
+    margin: 0 1rem;
+}
+
+.home-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.typed-intro {
+  padding-top: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #4822C3;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+
+body {
+    font-family: "Mono", monospace;
+    color: #4822C3;
+    text-align: justify;
+}
+
+.header {
+  background-color: #fb6233;
+  padding: .5rem;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  
+}
+
+.header .container {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: .5rem;
+}
+
+.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@font-face {
+  font-family: "Frick";
+  src: url('../assets/fonts/Frick/Frick.woff2') format('woff2'),
+       url('../assets/fonts/Frick/Frick.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mono";
+  src: url('../assets/fonts/Mono/Mono.woff2') format('woff2'),
+       url('../assets/fonts/Mono/Mono.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Terminal";
+  src: url('../assets/fonts/Terminal/terminal.woff2') format('woff2'),
+  url('../assets/fonts/Terminal/terminal.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pilowlava";
+  src: url('../assets/fonts/Pilowlava/Pilowlava.woff2') format('woff2'),
+  url('../assets/fonts/Pilowlava/Pilowlava.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.site-title {
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-family: "Frick", serif;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.site-title:hover {
+  color: #4822C3;
+  text-decoration: none;
+}
+
+/* ===============================
+   Navigation menu
+   =============================== */
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-family: "Mono", monospace;
+}
+
+  .menu ul {
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+.menu a {
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===============================
+   Footer
+   =============================== */
+.site-footer {
+    display: flex;
+    font-size: 0.9rem;
+    background-color: #fb6233;
+    color: #4822C3;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.bio {
+  position: absolute;
+  top: 280px;
+  max-width: 800px;
+  margin: 0 1rem;
+  line-height: 1.35;
+}
+
+.site-footer .wrapper {
+    max-width: 800px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-links {
+    display: flex;
+    font-family: "Frick", sans-serif;
+    gap: 2rem;
+}
+
+.page-title {
+    font-weight: normal;
+}
+
+.post-meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.font1 {
+  font-family: 'Mono', monospace;
+  font-size: 90px;
+  color: #4822C3;
+}
+
+.font2 {
+  font-family: 'Mono', monospace;
+  font-size: 90px;
+  color: white;
+}
+
+:changing-text {
+
+  text-justify:distribute;
+}
+
+#typed-text {
+  font-family: 'Mono', monospace;
+  font-size: 100px;
+  color: #4822C3;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+
+.post-list {
+  list-style: none;
+}

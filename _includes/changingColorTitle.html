@@ -1,0 +1,24 @@
+<a class="site-title" id="changing-color-title" href="{{ "/" | relative_url }}">
+    {{ site.title }}
+</a>
+
+<script>
+    const changingText = document.getElementById("changing-color-title");
+    const colorList = ["#FB6233", "#4822C3"];
+    let currentIndex = 0;
+    let colorInterval = null;
+
+    changingText.addEventListener("mouseenter", () => {
+        if (colorInterval) return;
+        colorInterval = setInterval(() => {
+            changingText.style.color = colorList[currentIndex];
+            currentIndex = (currentIndex + 1) % colorList.length;
+        }, 70);
+    });
+
+    changingText.addEventListener("mouseleave", () => {
+        clearInterval(colorInterval);
+        colorInterval = null;
+        changingText.style.color = "#4822C3";
+    });
+</script>

@@ -1,0 +1,35 @@
+title: "Vasily Belousov"
+email: "vasily.b@nyu.edu"
+description: >-
+  Personal website of Vasily Belousov, a CS/Journalism student at NYU.
+baseurl: ""
+url: ""
+
+github:
+  repository_url: https://github.com/vasilybels
+  username: vasilybels
+
+linkedin:
+  profile_url: https://www.linkedin.com/in/vasilybelousov
+
+instagram:
+  profile_url: https://www.instagram.com/vsvasia
+
+mail:
+  mailto: mailto:vasily.b@nyu.edu
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-animate-elements
+
+include:
+  - assets/fonts
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+animation:
+  enabled: true
+  duration: 0.5s
