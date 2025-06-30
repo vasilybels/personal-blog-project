@@ -1,9 +1,16 @@
+/* Global */
+
 html, body {
   height: 100%;
   margin: 0;
-  background-color: #fb6233;
+  background-color: #fb6233; 
 }
 
+body {
+    font-family: "Mono", monospace;
+    color: #4822C3;
+    text-align: justify;
+}
 
 .site-global {
     display: flex;
@@ -18,17 +25,6 @@ html, body {
     margin: 0 1rem;
 }
 
-.home-content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-.typed-intro {
-  padding-top: 1rem;
-}
-
 a {
   text-decoration: none;
   color: #4822C3;
@@ -38,13 +34,84 @@ a:hover {
   text-decoration: underline;
 }
 
-
-
-body {
-    font-family: "Mono", monospace;
-    color: #4822C3;
-    text-align: justify;
+.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+ul {
+  list-style: none;
+}
+
+/* Homepage */
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 400px;
+}
+
+.typed-intro {
+  padding-top: 1rem;
+  min-height: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+}
+
+.bio {
+  max-width: 800px;
+  margin: 2rem 1rem 0 1rem;
+  line-height: 1.35;
+  position: static;
+  width: 100%;
+  text-align: center;
+}
+
+#typed-text {
+  font-family: 'Mono', monospace;
+  font-size: 100px;
+  color: #4822C3;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* Post archive */
+
+.filters-container {
+  display: flex;
+  flex-direction: row;
+  gap: .3rem;
+}
+
+.archive-title:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.archive-title {
+  background: none;
+  border: none;
+  color: #4822C3;
+  font-family: "Mono", monospace;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.archive-title:hover {
+  text-decoration: underline;
+}
+
+.archive-title.active {
+  text-decoration: underline;
+}
+
+/* Header */
 
 .header {
   background-color: #fb6233;
@@ -65,11 +132,64 @@ body {
   margin-bottom: .5rem;
 }
 
-.container {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+.site-title {
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-family: "Frick", serif;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
+
+.site-title:hover {
+  color: #4822C3;
+  text-decoration: none;
+}
+
+/* Nav menu */
+
+.menu ul {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5rem;
+  padding: 0;
+  gap: 1rem;
+}
+
+.menu ul li:hover {
+  text-decoration: underline;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+/* Footer */
+
+.site-footer {
+    display: flex;
+    font-size: 0.9rem;
+    background-color: #fb6233;
+    color: #4822C3;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.site-footer .wrapper {
+    max-width: 800px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-links {
+    display: flex;
+    font-family: "Frick", sans-serif;
+    gap: 2rem;
+}
+
+/* Typefaces */
 
 @font-face {
   font-family: "Frick";
@@ -101,125 +221,4 @@ body {
   url('../assets/fonts/Pilowlava/Pilowlava.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-}
-
-.site-title {
-  text-decoration: none;
-  font-size: 1.7rem;
-  font-family: "Frick", serif;
-  margin: 0;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-}
-
-
-
-.site-title:hover {
-  color: #4822C3;
-  text-decoration: none;
-}
-
-/* ===============================
-   Navigation menu
-   =============================== */
-.menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  font-family: "Mono", monospace;
-}
-
-  .menu ul {
-    flex-direction: row;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-
-.menu a {
-    text-decoration: none;
-}
-
-.menu a:hover {
-    text-decoration: underline;
-}
-
-
-/* ===============================
-   Footer
-   =============================== */
-.site-footer {
-    display: flex;
-    font-size: 0.9rem;
-    background-color: #fb6233;
-    color: #4822C3;
-    width: 100%;
-    padding: 1rem 0;
-}
-
-.bio {
-  position: absolute;
-  top: 280px;
-  max-width: 800px;
-  margin: 0 1rem;
-  line-height: 1.35;
-}
-
-.site-footer .wrapper {
-    max-width: 800px;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.footer-links {
-    display: flex;
-    font-family: "Frick", sans-serif;
-    gap: 2rem;
-}
-
-.page-title {
-    font-weight: normal;
-}
-
-.post-meta {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-}
-
-.font1 {
-  font-family: 'Mono', monospace;
-  font-size: 90px;
-  color: #4822C3;
-}
-
-.font2 {
-  font-family: 'Mono', monospace;
-  font-size: 90px;
-  color: white;
-}
-
-:changing-text {
-
-  text-justify:distribute;
-}
-
-#typed-text {
-  font-family: 'Mono', monospace;
-  font-size: 100px;
-  color: #4822C3;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-}
-
-
-.post-list {
-  list-style: none;
 }

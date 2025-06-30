@@ -4,26 +4,55 @@ layout: default
 
 <article class="archive-content">
 
-    <div class="archive">
+    <div class="archive" data-aos="fade-up">
+        <div class="filters-container">
+            <button class="archive-title" data-filter="all">all posts</button>
+            <button class="archive-title" data-filter="projects">projects</button>
+            <button class="archive-title" data-filter="music">music</button>
+            <button class="archive-title" data-filter="travel">travel</button>
+        </div>
 
-            <h1 class="archive-title">all posts</h1>
-
+        <div id="posts-container">
             {% for post in site.posts %}
-            <div class="post-display">
-                <ul class="post-list">
-                    {% if post.categories contains "projects" %}
-                    <li class="post-title-project">
-                        <a href="{{ post.url }}">{{ post.title }}</a>
-                    </li>
-                    {% else %}
-                    <li class="post-title">
-                        <a href="{{ post.url }}">{{ post.title }}</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
-                
+                <div class="post-display" data-categories="{{ post.categories | join: ' ' }}">
+                    <ul class="post-list">
+                        {% if post.categories contains "projects" %}
+                            <li class="post-title-project">
+                                <a href="{{ post.url }}">{{ post.title }}</a>
+                            </li>
+                        {% else %}
+                            <li class="post-title">
+                                <a href="{{ post.url }}">{{ post.title }}</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
             {% endfor %}
-
+        </div>
     </div>
 </article>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll('.archive-title');
+    const posts = document.querySelectorAll('.post-display');
+    const defaultButton = document.querySelector('.archive-title[data-filter="all"]');
+    defaultButton.classList.add('active');
+    posts.forEach(post => post.style.display = '');
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function () {
+            buttons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.getAttribute('data-filter');
+            posts.forEach(function(post) {
+                const categories = post.getAttribute('data-categories').split(' ');
+                if (filter === 'all' || categories.includes(filter)) {
+                    post.style.display = '';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
